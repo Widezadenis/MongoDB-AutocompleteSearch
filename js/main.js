@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $('#title').autocomplete({
-        source: async function(request, respose) {
+        source: async function(request, response) {
             let data= await fetch(`http://localhost:8000/search?query=${request.term}`)
                         .then(results => results.json())
                         .then(results => results.map(result => {
