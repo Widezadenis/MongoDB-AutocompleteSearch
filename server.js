@@ -2,8 +2,8 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const {MongoClient, ObjectId} = require('mongodb')
-const {respose} = require('express')
-const {request} = request('http')
+const {response} = require('express')
+const {request} = reqyuire('http')
 require('dotenv').config()
 const PORT = 8000
 
@@ -23,7 +23,7 @@ app.use(express.urlencoded({extended : true}))
 app.use(express.json())
 app.use(cors())
 
-app.get("/search", async (request, respose) => {
+app.get("/search", async (request, response) => {
     try{
         let result = await collection.aggregate([
             {
@@ -46,7 +46,7 @@ app.get("/search", async (request, respose) => {
     }
 })
 
-app.get("/get/:id", async (request, respose) => {
+app.get("/get/:id", async (request, response) => {
     try {
         let result = await collection.findOne({
             "_id" : ObjectId(request.params.id)
