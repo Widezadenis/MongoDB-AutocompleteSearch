@@ -40,9 +40,9 @@ app.get("/search", async (request, response) => {
                 }
             }
         ]).toArray()
-        respose.send(result)
+        response.send(result)
     }catch (error){
-        respose.status(500).send({message: error.message})
+        response.status(500).send({message: error.message})
     }
 })
 
