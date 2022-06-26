@@ -51,9 +51,9 @@ app.get("/get/:id", async (request, response) => {
         let result = await collection.findOne({
             "_id" : ObjectId(request.params.id)
         })
-        respose.send(result)
+        response.send(result)
     }catch (error){
-        respose.status(500).send({message: error.message})
+        response.status(500).send({message: error.message})
     }
 }
 )
